@@ -6,3 +6,6 @@ This example shows using Syncfusion Blazor Components in .NET MAUI Blazor App.
 * The latest preview of Visual Studio 2022 17.1 or above, with required workloads:
   * Mobile development with .NET
   * ASP.NET and web development
+
+
+[Getting Started with .NET MAUI Blazor App](https://blazor.syncfusion.com/documentation/getting-started/maui-blazor-app)
