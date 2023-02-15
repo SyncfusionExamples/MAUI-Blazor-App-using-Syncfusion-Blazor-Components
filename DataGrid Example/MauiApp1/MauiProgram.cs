@@ -1,32 +1,22 @@
-﻿using MauiApp1.Data;
-using Microsoft.AspNetCore.Components.WebView.Maui;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Maui;
-using Microsoft.Maui.Controls.Compatibility;
-using Microsoft.Maui.Controls.Hosting;
-using Microsoft.Maui.Hosting;
+﻿using Microsoft.AspNetCore.Components.WebView.Maui;
+using MauiApp1.Data;
 using Syncfusion.Blazor;
 
-namespace MauiApp1
+namespace MauiApp1;
+
+public static class MauiProgram
 {
-    public static class MauiProgram
-    {
-        public static MauiApp CreateMauiApp()
-        {
-            var builder = MauiApp.CreateBuilder();
-            builder
-                .RegisterBlazorMauiWebView()
-                .UseMauiApp<App>()
-                .ConfigureFonts(fonts =>
-                {
-                    fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
-                });
+	public static MauiApp CreateMauiApp()
+	{
+		var builder = MauiApp.CreateBuilder();
+        builder.UseMauiApp<App>().ConfigureFonts(fonts =>{fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");});
+		builder.Services.AddMauiBlazorWebView();
+        builder.Services.AddSyncfusionBlazor();
 
-            builder.Services.AddBlazorWebView();
-            builder.Services.AddSingleton<WeatherForecastService>();
-            builder.Services.AddSyncfusionBlazor(options => { options.IgnoreScriptIsolation = true; });
-
-            return builder.Build();
-        }
-    }
+		#if DEBUG
+        builder.Services.AddBlazorWebViewDeveloperTools();        
+#endif
+        builder.Services.AddSingleton<WeatherForecastService>();
+		return builder.Build();
+	}
 }
