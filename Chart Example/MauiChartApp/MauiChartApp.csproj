@@ -1,10 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
 
     <PropertyGroup>
-        <TargetFrameworks>net6.0-android;net6.0-ios;net6.0-maccatalyst</TargetFrameworks>
-        <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net6.0-windows10.0.19041.0</TargetFrameworks>
+        <TargetFrameworks>net7.0-android<!--;net7.0-ios;net7.0-maccatalyst--></TargetFrameworks>
+        <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net7.0-windows10.0.19041.0</TargetFrameworks>
         <!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
-        <!-- <TargetFrameworks>$(TargetFrameworks);net6.0-tizen</TargetFrameworks> -->
+        <!-- <TargetFrameworks>$(TargetFrameworks);net7.0-tizen</TargetFrameworks> -->
         <OutputType>Exe</OutputType>
         <RootNamespace>MauiChartApp</RootNamespace>
         <UseMaui>true</UseMaui>
@@ -17,7 +17,7 @@
 
         <!-- App Identifier -->
         <ApplicationId>com.companyname.mauichartapp</ApplicationId>
-        <ApplicationIdGuid>297E398E-B983-40F0-A8F7-F5FF68B9CD24</ApplicationIdGuid>
+        <ApplicationIdGuid>D5C47D69-3C55-4E55-98FD-477E474F1373</ApplicationIdGuid>
 
         <!-- Versions -->
         <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
@@ -50,8 +50,9 @@
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="Syncfusion.Blazor.Charts" Version="20.4.0.49" />
-      <PackageReference Include="Syncfusion.Blazor.Themes" Version="20.4.0.50" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
+        <PackageReference Include="Syncfusion.Blazor.Charts" Version="23.1.39" />
+        <PackageReference Include="Syncfusion.Blazor.Themes" Version="23.1.39" />
     </ItemGroup>
 
 </Project>
