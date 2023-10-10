@@ -3,9 +3,8 @@ This example shows using [Syncfusion Blazor Components](https://www.syncfusion.c
 
 ## Prerequisites
 * .NET SDK 7.0
-* Visual Studio 2022 17.3 or greater, with required workloads:
-  * Mobile development with .NET
-  * ASP.NET and web development
+* Visual Studio 2022 version 17.3 or greater, with the required workload:
+  * .NET Multi-platform App UI development.
 
 
 [Getting Started with .NET MAUI Blazor App](https://blazor.syncfusion.com/documentation/getting-started/maui-blazor-app)
