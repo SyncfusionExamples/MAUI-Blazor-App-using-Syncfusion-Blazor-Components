@@ -3,20 +3,20 @@
 @using Syncfusion.Blazor.Charts
 
 <SfChart Title="Sales Analysis">
-    <ChartPrimaryXAxis Title="Month" ValueType="Syncfusion.Blazor.Charts.ValueType.Category"/>
-    <ChartPrimaryYAxis Title="Sales in Dollar"/>
+    <ChartPrimaryXAxis Title="Month" ValueType="Syncfusion.Blazor.Charts.ValueType.Category" />
+    <ChartPrimaryYAxis Title="Sales in Dollar" />
     <ChartSeriesCollection>
-        <ChartSeries DataSource="@Sales" XName="Month" YName="SalesValue" Type="ChartSeriesType.Column"/>
+        <ChartSeries DataSource="@Sales" XName="Month" YName="SalesValue" Type="ChartSeriesType.Column" />
     </ChartSeriesCollection>
 </SfChart>
 
 @code {
     public class SalesInfo
     {
-        public string Month { get; set;}
-        public double SalesValue { get; set;}
+        public string Month { get; set; }
+        public double SalesValue { get; set; }
     }
-    
+
     public List<SalesInfo> Sales = new List<SalesInfo>
     {
         new SalesInfo { Month = "Jan", SalesValue = 35 },
